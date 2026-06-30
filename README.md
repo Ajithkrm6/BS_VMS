@@ -1,4 +1,4 @@
-# BS-VMS - Vehicle Management System
+# BS-VMS - Vendor Management System
 
 A modern Vehicle Management System built with React, Vite, Redux, TailwindCSS, and TanStack Query.
 
