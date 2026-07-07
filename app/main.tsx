@@ -1,19 +1,15 @@
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { RouterProvider } from 'react-router-dom';
+import router from '~/routes/routes';
 import { Provider } from 'react-redux';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { store } from '~/stores';
 import { queryClient } from '~/services/queryClient';
 import { Layout } from '~/root';
 import { ErrorBoundary } from '~/components/Layout/Utility/ErrorBoundary';
-import { ProtectedRoute } from '~/components/Auth/ProtectedRoute';
 import { useAppDispatch } from '~/stores';
 import { validateSession } from '~/stores/authSlice';
-import { Dashboard } from '~/routes';
-import { AuthRoute } from '~/routes/auth';
-import { Opportunity } from '~/routes/opportunity';
-import { Bench } from '~/routes/bench';
 import '~/root.css';
 
 /**
@@ -65,42 +61,11 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <ErrorBoundary>
       <Provider store={store}>
         <QueryClientProvider client={queryClient}>
-          <BrowserRouter>
-            <AppInitializer>
-              <Layout>
-                <Routes>
-                  {/* Auth Route - Public */}
-                  <Route path="/auth" element={<AuthRoute />} />
-
-                  {/* Protected Routes */}
-                  <Route
-                    path="/"
-                    element={
-                      <ProtectedRoute>
-                        <Dashboard />
-                      </ProtectedRoute>
-                    }
-                  />
-                  <Route
-                    path="/opportunities"
-                    element={
-                      <ProtectedRoute>
-                        <Opportunity />
-                      </ProtectedRoute>
-                    }
-                  />
-                  <Route
-                    path="/bench"
-                    element={
-                      <ProtectedRoute>
-                        <Bench />
-                      </ProtectedRoute>
-                    }
-                  />
-                </Routes>
-              </Layout>
-            </AppInitializer>
-          </BrowserRouter>
+          <AppInitializer>
+            {/* <Layout > */}
+              <RouterProvider router={router} />
+            {/* </Layout> */}
+          </AppInitializer>
         </QueryClientProvider>
       </Provider>
     </ErrorBoundary>

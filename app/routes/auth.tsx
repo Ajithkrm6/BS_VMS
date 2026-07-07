@@ -1,4 +1,4 @@
-import { AuthPage } from '~/components/Auth/AuthPage';
+import { AuthPage } from '~/Auth/Pages/AuthPage';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '~/hooks/useAuth';
 import { useEffect } from 'react';
