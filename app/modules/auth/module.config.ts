@@ -41,6 +41,8 @@ export const authModuleConfig: ModuleConfig = {
       component: lazy(() => import('~/Auth/Pages/AuthPage').then((m) => ({ default: m.AuthPage }))),
       order: 2,
     },
+
+  
   ],
 
   // Redux
