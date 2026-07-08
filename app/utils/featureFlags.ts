@@ -26,6 +26,14 @@ export interface FeatureFlags {
  * Define all features here with their settings
  */
 export const FEATURE_FLAGS: FeatureFlags = {
+  // Public Pages (Always Enabled)
+  landingPages: {
+    name: 'landingPages',
+    enabled: true,
+    description: 'Public landing pages (home, privacy, terms)',
+    targetEnvironments: ['development', 'staging', 'production'],
+  },
+
   // Core Features
   authentication: {
     name: 'authentication',
@@ -121,6 +129,38 @@ export const FEATURE_FLAGS: FeatureFlags = {
       defaultLanguage: 'en',
       supportedLanguages: ['en', 'es', 'fr'],
     },
+  },
+
+  // Job Postings / Opportunities
+  jobPostings: {
+    name: 'jobPostings',
+    enabled: true,
+    description: 'Job postings and opportunities management',
+    targetEnvironments: ['development', 'staging', 'production'],
+  },
+
+  // Vehicle Management
+  vehicleManagement: {
+    name: 'vehicleManagement',
+    enabled: true,
+    description: 'Vehicle management and tracking',
+    targetEnvironments: ['development', 'staging', 'production'],
+  },
+
+  // Maintenance Tracking
+  maintenanceTracking: {
+    name: 'maintenanceTracking',
+    enabled: true,
+    description: 'Maintenance scheduling and tracking',
+    targetEnvironments: ['development', 'staging', 'production'],
+  },
+
+  // Advanced Reporting
+  advancedReporting: {
+    name: 'advancedReporting',
+    enabled: true,
+    description: 'Advanced reporting and analytics',
+    targetEnvironments: ['development', 'staging', 'production'],
   },
 };
 

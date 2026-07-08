@@ -1,34 +1,26 @@
 /**
- * Vendor Billing Module Configuration
- * Vendor invoicing and payment tracking
+ * Reporting Module Configuration
+ * Advanced reporting and analytics
  */
 
-import type { ModuleConfig } from '~/utils/moduleRegistry';
+import type { ModuleConfig } from '~/core/utils/moduleRegistry';
 
-export const vendorBillingModuleConfig: ModuleConfig = {
-  name: 'vendorBilling',
+export const reportingModuleConfig: ModuleConfig = {
+  id: 'reporting',
+  name: 'Reporting',
+  description: 'Advanced reporting and analytics',
   version: '1.0.0',
-  featureFlag: 'vendorBilling',
-  description: 'Vendor invoicing and payment management',
-  dependencies: ['core', 'vendors'],
-  routes: [
-    // Routes will be added here
-    // {
-    //   path: '/reports',
-    //   name: 'Reports',
-    //   component: lazy(() => import('./pages/ReportsHub')),
-    //   icon: '📊',
-    //   order: 10,
-    // }
+  featureFlag: 'advancedReporting',
+  order: 3,
+  category: 'business',
+  dependencies: ['auth', 'core'],
+  routes: [],
+  permissions: [
+    {
+      resource: 'reports',
+      actions: ['read'],
+    },
   ],
-  stores: [
-    // Add Redux slices
-    // {
-    //   name: 'reports',
-    //   reducer: reportsReducer,
-    // }
-  ],
-  permissions: ['report:read', 'report:export'],
 };
 
-export default vendorBillingModuleConfig;
+export default reportingModuleConfig;

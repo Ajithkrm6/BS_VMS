@@ -1,34 +1,26 @@
 /**
- * Vendor Tracking Module Configuration
- * Vendor performance and metrics tracking
+ * Maintenance Module Configuration
+ * Maintenance tracking and management
  */
 
-import type { ModuleConfig } from '~/utils/moduleRegistry';
+import type { ModuleConfig } from '~/core/utils/moduleRegistry';
 
-export const vendorTrackingModuleConfig: ModuleConfig = {
-  name: 'vendorTracking',
+export const maintenanceModuleConfig: ModuleConfig = {
+  id: 'maintenance',
+  name: 'Maintenance',
+  description: 'Maintenance scheduling and tracking',
   version: '1.0.0',
-  featureFlag: 'vendorTracking',
-  description: 'Vendor performance tracking and metrics',
-  dependencies: ['core', 'vendors'],
-  routes: [
-    // Routes will be added here
-    // {
-    //   path: '/maintenance',
-    //   name: 'Maintenance',
-    //   component: lazy(() => import('./pages/MaintenanceTracker')),
-    //   icon: '🔧',
-    //   order: 3,
-    // }
+  featureFlag: 'maintenanceTracking',
+  order: 2,
+  category: 'business',
+  dependencies: ['auth', 'core'],
+  routes: [],
+  permissions: [
+    {
+      resource: 'maintenance',
+      actions: ['read', 'create', 'update', 'delete'],
+    },
   ],
-  stores: [
-    // Add Redux slices
-    // {
-    //   name: 'maintenance',
-    //   reducer: maintenanceReducer,
-    // }
-  ],
-  permissions: ['maintenance:read', 'maintenance:create', 'maintenance:update'],
 };
 
-export default vendorTrackingModuleConfig;
+export default maintenanceModuleConfig;

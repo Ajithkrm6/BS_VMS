@@ -1,24 +1,26 @@
 /**
  * Notifications Module Configuration
- * In-app notifications system
+ * In-app notification system
  */
 
-import type { ModuleConfig } from '~/utils/moduleRegistry';
+import type { ModuleConfig } from '~/core/utils/moduleRegistry';
 
 export const notificationsModuleConfig: ModuleConfig = {
-  name: 'notifications',
+  id: 'notifications',
+  name: 'Notifications',
+  description: 'In-app notification system',
   version: '1.0.0',
   featureFlag: 'notificationSystem',
-  description: 'In-app notifications and alerts',
-  dependencies: ['core'],
-  stores: [
-    // Add Redux slices
-    // {
-    //   name: 'notifications',
-    //   reducer: notificationsReducer,
-    // }
+  order: 4,
+  category: 'core',
+  dependencies: ['auth'],
+  routes: [],
+  permissions: [
+    {
+      resource: 'notifications',
+      actions: ['read'],
+    },
   ],
-  permissions: ['notification:read'],
 };
 
 export default notificationsModuleConfig;

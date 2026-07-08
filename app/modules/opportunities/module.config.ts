@@ -1,20 +1,35 @@
 /**
  * Opportunities Module Configuration
- * Job postings and career management
+ * Job postings and career opportunities
+ *
+ * This module handles:
+ * - Job postings management
+ * - Opportunity browsing
+ * - Job details and applications
  */
 
 import { lazy } from 'react';
-import type { ModuleConfig } from '~/utils/moduleRegistry';
 import opportunitiesReducer from './stores/opportunitiesSlice';
-import JobDetailsPage from './pages/JobDetailsPage';
+import type { ModuleConfig } from '~/core/utils/moduleRegistry';
 
 export const opportunitiesModuleConfig: ModuleConfig = {
-  name: 'opportunities',
-  version: '1.0.0',
-  featureFlag: 'jobPostings',
+  // Identification
+  id: 'opportunities',
+  name: 'Job Opportunities',
   description: 'Job postings and career opportunities',
-  dependencies: ['core'],
+  version: '1.0.0',
 
+  // Feature flag
+  featureFlag: 'jobPostings',
+
+  // Organization
+  order: 1, // After core modules
+  category: 'business',
+
+  // Dependencies
+  dependencies: ['auth', 'core'],
+
+  // Routes
   routes: [
     {
       path: '/opportunities',
@@ -26,20 +41,36 @@ export const opportunitiesModuleConfig: ModuleConfig = {
     {
       path: '/opportunities/:id',
       name: 'Job Details',
-      component: JobDetailsPage,
+      component: lazy(() => import('./pages/JobDetailsPage')),
       icon: '📄',
       order: 5,
     },
   ],
 
-  stores: [
+  // Redux
+  reducers: [
     {
       name: 'opportunities',
-      reducer: opportunitiesReducer,
+      reducer: opportunitiesReducer as any,
     },
   ],
 
-  permissions: ['opportunities:read', 'opportunities:create', 'opportunities:edit'],
+  // Permissions
+  permissions: [
+    {
+      resource: 'opportunities',
+      actions: ['read', 'create', 'update', 'delete'],
+    },
+  ],
+
+  // Lifecycle hooks
+  onLoad: async () => {
+    console.debug('Opportunities module loaded');
+  },
+
+  onUnload: async () => {
+    console.debug('Opportunities module unloading');
+  },
 };
 
 export default opportunitiesModuleConfig;

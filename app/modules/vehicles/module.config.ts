@@ -1,34 +1,26 @@
 /**
- * Vendors Module Configuration
- * Vendor management feature
+ * Vehicles Module Configuration
+ * Vehicle management feature
  */
 
-import type { ModuleConfig } from '~/utils/moduleRegistry';
+import type { ModuleConfig } from '~/core/utils/moduleRegistry';
 
-export const vendorsModuleConfig: ModuleConfig = {
-  name: 'vendors',
+export const vehiclesModuleConfig: ModuleConfig = {
+  id: 'vehicles',
+  name: 'Vehicles',
+  description: 'Vehicle management and tracking',
   version: '1.0.0',
-  featureFlag: 'vendorManagement',
-  description: 'Vendor CRUD operations and management',
-  dependencies: ['core'],
-  routes: [
-    // Routes will be added here
-    // {
-    //   path: '/vehicles',
-    //   name: 'Vehicles',
-    //   component: lazy(() => import('./pages/VehiclesList')),
-    //   icon: '🚗',
-    //   order: 2,
-    // }
+  featureFlag: 'vehicleManagement',
+  order: 1,
+  category: 'business',
+  dependencies: ['auth', 'core'],
+  routes: [],
+  permissions: [
+    {
+      resource: 'vehicles',
+      actions: ['read', 'create', 'update', 'delete'],
+    },
   ],
-  stores: [
-    // Add Redux slices
-    // {
-    //   name: 'vehicles',
-    //   reducer: vehiclesReducer,
-    // }
-  ],
-  permissions: ['vehicle:read', 'vehicle:create', 'vehicle:update', 'vehicle:delete'],
 };
 
-export default vendorsModuleConfig;
+export default vehiclesModuleConfig;

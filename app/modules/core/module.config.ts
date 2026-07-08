@@ -1,24 +1,57 @@
 /**
  * Core Module Configuration
- * Authentication and core functionality
+ * Core features and dashboard (always loaded)
+ *
+ * This module provides:
+ * - Dashboard page
+ * - Navigation
+ * - Layout
  */
 
-import type { ModuleConfig } from '~/utils/moduleRegistry';
+import { lazy } from 'react';
+import type { ModuleConfig } from '~/core/utils/moduleRegistry';
 
 export const coreModuleConfig: ModuleConfig = {
-  name: 'core',
+  // Identification
+  id: 'core',
+  name: 'Core',
+  description: 'Core application features and dashboard',
   version: '1.0.0',
-  featureFlag: 'authentication',
-  description: 'Core authentication and user management',
-  routes: [],
-  stores: [
-    // Add Redux slices here
-    // {
-    //   name: 'auth',
-    //   reducer: authReducer,
-    // }
+
+  // Feature flag
+  featureFlag: 'authentication', // Always available if auth is available
+
+  // Organization
+  order: 0, // Load first
+  category: 'core',
+
+  // Routes
+  routes: [
+    {
+      path: '/dashboard',
+      name: 'Dashboard',
+      component: lazy(() => import('~/routes/index').then((m) => ({ default: m.Dashboard }))),
+      icon: '📊',
+      order: 0,
+    },
   ],
-  permissions: ['user:read', 'user:manage'],
+
+  // Permissions
+  permissions: [
+    {
+      resource: 'dashboard',
+      actions: ['read'],
+    },
+  ],
+
+  // Lifecycle hooks
+  onLoad: async () => {
+    console.debug('Core module loaded');
+  },
+
+  onUnload: async () => {
+    console.debug('Core module unloading');
+  },
 };
 
 export default coreModuleConfig;

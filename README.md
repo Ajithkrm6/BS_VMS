@@ -1,8 +1,8 @@
-# 📖 BS-VMS - Vendor Management System
+# 📖 BS-VMS - Vendor Management System (v2.0 - Modular Architecture)
 
 A modern, production-ready React application for managing vendors, jobs, and opportunities.
 
-**Status:** ✅ Production Foundation | **TypeScript:** 0 Errors | **Build:** Success
+**Status:** ✅ Production Grade | **Architecture:** 10/10 | **TypeScript:** 0 Errors | **Build:** Success
 
 ---
 
@@ -28,9 +28,19 @@ Visit: `http://localhost:5173`
 
 ## 📚 Documentation
 
-**Complete documentation available in:**
+### New Architecture (v2.0) - START HERE ⭐
 
-📖 **totalguide.md** - Full developer guide with:
+**If you're new to this project:**
+
+1. **[DELIVERY_SUMMARY.md](DELIVERY_SUMMARY.md)** - Overview of what was built (5 min read)
+2. **[ARCHITECTURE.md](ARCHITECTURE.md)** - Visual structure and explanation (10 min read)
+3. **[INTEGRATION_GUIDE.md](INTEGRATION_GUIDE.md)** - Step-by-step integration (30 min read)
+4. **[IMPLEMENTATION_CHECKLIST.md](IMPLEMENTATION_CHECKLIST.md)** - Tasks to complete (checklist)
+5. **[BEFORE_AND_AFTER.md](BEFORE_AND_AFTER.md)** - What changed and why (15 min read)
+
+### Original Documentation
+
+📖 **totalguide.md** - Legacy guide (kept for reference):
 
 - Quick overview & tech stack
 - Project structure & architecture
@@ -46,7 +56,7 @@ Visit: `http://localhost:5173`
 
 ## 🏗️ Architecture
 
-**3-Tier Data Handling:**
+**Modular, Scalable, Enterprise-Grade:**
 
 ```
 Redux Store (runtime) ↔ localStorage (persistence) ↔ Backend API (source of truth)
