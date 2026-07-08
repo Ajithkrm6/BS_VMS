@@ -34,29 +34,29 @@ export const landingModuleConfig: ModuleConfig = {
       path: '/',
       name: 'Home',
       component: lazy(() =>
-        import('~/modules/landing/pages/HomePage').then((m) => ({ default: m.HomePage }))
+        import('~/modules/landing/pages/LandingPage').then((m) => ({ default: m.default }))
       ),
       isPublic: true, // ← Anyone can see this
       order: 1,
     },
-    {
-      path: '/privacy',
-      name: 'Privacy',
-      component: lazy(() =>
-        import('~/modules/landing/pages/PrivacyPage').then((m) => ({ default: m.PrivacyPage }))
-      ),
-      isPublic: true,
-      order: 2,
-    },
-    {
-      path: '/terms',
-      name: 'Terms',
-      component: lazy(() =>
-        import('~/modules/landing/pages/TermsPage').then((m) => ({ default: m.TermsPage }))
-      ),
-      isPublic: true,
-      order: 3,
-    },
+    // {
+    //   path: '/privacy',
+    //   name: 'Privacy',
+    //   component: lazy(() =>
+    //     import('~/modules/landing/pages/PrivacyPage').then((m) => ({ default: m.PrivacyPage }))
+    //   ),
+    //   isPublic: true,
+    //   order: 2,
+    // },
+    // {
+    //   path: '/terms',
+    //   name: 'Terms',
+    //   component: lazy(() =>
+    //     import('~/modules/landing/pages/TermsPage').then((m) => ({ default: m.TermsPage }))
+    //   ),
+    //   isPublic: true,
+    //   order: 3,
+    // },
   ],
 
   // No Redux for landing (optional: you can add if needed)
