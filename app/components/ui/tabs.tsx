@@ -22,7 +22,8 @@ function Tabs({
 }
 
 const tabsListVariants = cva(
-  "group/tabs-list inline-flex w-fit items-center justify-center rounded-lg p-[3px] text-muted-foreground group-data-horizontal/tabs:h-8 group-data-vertical/tabs:h-fit group-data-vertical/tabs:flex-col data-[variant=line]:rounded-none",
+  //"group/tabs-list inline-flex w-fit items-center justify-center rounded-lg p-[3px] text-muted-foreground group-data-horizontal/tabs:h-8 group-data-vertical/tabs:h-fit group-data-vertical/tabs:flex-col data-[variant=line]:rounded-none",
+  "group/tabs-list inline-flex w-full items-center justify-center rounded-lg p-[3px] text-muted-foreground group-data-horizontal/tabs:h-8 group-data-vertical/tabs:h-fit group-data-vertical/tabs:flex-col data-[variant=line]:rounded-none",
   {
     variants: {
       variant: {
@@ -57,28 +58,44 @@ function TabsTrigger({ className, ...props }: TabsPrimitive.Tab.Props) {
   return (
     <TabsPrimitive.Tab
       data-slot="tabs-trigger"
+      // className={cn(
+      //   // "relative inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center",
+      //   "relative inline-flex items-center justify-center",
+      //   "px-4 py-2 text-sm font-medium",
+      //   "border-b-2 border-transparent",
+      //   "text-muted-foreground transition-all duration-200",
+
+      //   "hover:text-foreground",
+
+      //   "focus-visible:outline-none",
+      //   "focus-visible:ring-2",
+      //   "focus-visible:ring-ring",
+
+      //   "disabled:pointer-events-none",
+      //   "disabled:opacity-50",
+
+      //   // Active tab styles
+      //   "[&[aria-selected='true']]:text-primary",
+      //   "[&[aria-selected='true']]:border-primary",
+      //   "[&[aria-selected='true']]:font-semibold",
+
+      //   className
+      // )}
+
       className={cn(
-        "relative inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center",
-        "px-4 py-2 text-sm font-medium",
-        "border-b-2 border-transparent",
-        "text-muted-foreground transition-all duration-200",
+  "relative inline-flex items-center justify-center px-4 py-3 text-sm font-medium",
+  "border-b-2 border-transparent",
+  "text-muted-foreground transition-colors duration-200",
+  "hover:text-foreground",
+  "focus:outline-none",
+  "focus-visible:ring-0",
+  "focus-visible:outline-none",
 
-        "hover:text-foreground",
+  "[&[aria-selected='true']]:text-primary",
+  "[&[aria-selected='true']]:border-primary",
 
-        "focus-visible:outline-none",
-        "focus-visible:ring-2",
-        "focus-visible:ring-ring",
-
-        "disabled:pointer-events-none",
-        "disabled:opacity-50",
-
-        // Active tab styles
-        "[&[aria-selected='true']]:text-primary",
-        "[&[aria-selected='true']]:border-primary",
-        "[&[aria-selected='true']]:font-semibold",
-
-        className
-      )}
+  className
+)}
       {...props}
     />
   );

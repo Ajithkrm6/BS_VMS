@@ -15,8 +15,8 @@ export function AuthPage({ onAuthSuccess }: AuthPageProps) {
   const isForgotPassword = pathname?.includes('/forgot-password');
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] min-h-screen w-full bg-gray-50/50">
-      
+    <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] min-h-screen  w-full bg-gray-50/50">
+      {/* <div className="grid grid-cols-1 xl:grid-cols-[3fr_2fr] min-h-screen w-full bg-gray-50/50"> */}
       {/* Left Column: Handles Form Alignment & Scrolling */}
       <div className="w-full flex flex-col items-center justify-start px-6 py-12 md:py-16 min-h-screen">
         
@@ -39,7 +39,8 @@ export function AuthPage({ onAuthSuccess }: AuthPageProps) {
       </div>
       
       {/* Right Column: Sticky Desktop Illustration */}
-      <div className="hidden md:block h-screen sticky top-0 p-4 bg-white">
+      <div className="hidden md:block h-screen sticky top-0 p-4 bg-white min-w-0">
+      {/* <div className="hidden xl:block h-screen sticky top-0 p-4 bg-white"> */}
         <img
           src="/auth-illustration.png"
           alt="Authentication illustration"
@@ -50,3 +51,8 @@ export function AuthPage({ onAuthSuccess }: AuthPageProps) {
     </div>
   );
 }
+
+
+
+
+

@@ -69,7 +69,10 @@ export function RegisterForm({ onSuccess, onToggleLogin }: RegisterFormProps) {
 
   return (
     <div className="w-full">
-      <Tabs defaultValue="company" className="w-full flex flex-col items-center">
+
+      {/* // my tabs code */}
+
+      {/* <Tabs defaultValue="company" className="w-full flex flex-col items-center" >
         <TabsList variant="line" className="w-full flex justify-center gap-6 sm:gap-8 bg-transparent border-b border-gray-200 px-2 pb-0 mb-6 flex-wrap">
           <TabsTrigger value="company" className="flex-none whitespace-nowrap px-2 py-3 font-medium transition-all duration-200">
             Company Signup
@@ -81,6 +84,32 @@ export function RegisterForm({ onSuccess, onToggleLogin }: RegisterFormProps) {
             Service Provider
           </TabsTrigger>
         </TabsList>
+        <TabsList
+  variant="line"
+  className="
+    w-full
+    flex
+    overflow-x-auto
+    whitespace-nowrap
+    border-b
+    border-gray-200
+    bg-transparent
+    mb-6
+    no-scrollbar
+  "
+>
+  <TabsTrigger value="company" className="flex-shrink-0 px-4 py-3">
+    Company Signup
+  </TabsTrigger>
+
+  <TabsTrigger value="freelancer" className="flex-shrink-0 px-4 py-3">
+    Freelancer Signup
+  </TabsTrigger>
+
+  <TabsTrigger value="service" className="flex-shrink-0 px-4 py-3">
+    Service Provider
+  </TabsTrigger>
+</TabsList>
         <TabsContent value="company" className="w-full focus-visible:outline-none">
           <CompanySignUp />
         </TabsContent>
@@ -90,7 +119,130 @@ export function RegisterForm({ onSuccess, onToggleLogin }: RegisterFormProps) {
         <TabsContent value="service" className="w-full focus-visible:outline-none">
           <ServiceProvider />
         </TabsContent>
-      </Tabs>
+      </Tabs> */}
+
+
+{/* // test tabs code */}
+
+      <Tabs
+  defaultValue="company"
+  orientation="horizontal"
+  className="w-full flex flex-col items-center"
+>
+  {/* <TabsList
+    variant="line"
+    className="
+      w-full
+      flex
+      flex-col
+      sm:flex-row
+      sm:justify-center
+      sm:gap-6
+      md:gap-8
+      border-b
+      bg-transparent
+      border-gray-200
+      mb-6
+    "
+  >
+    <TabsTrigger
+      value="company"
+      className="w-full sm:w-auto text-center py-3 px-4"
+    >
+      Company Signup
+    </TabsTrigger>
+
+    <TabsTrigger
+      value="freelancer"
+      className="w-full sm:w-auto text-center py-3 px-4"
+    >
+      Freelancer Signup
+    </TabsTrigger>
+
+    <TabsTrigger
+      value="service"
+      className="w-full sm:w-auto text-center py-3 px-4"
+    >
+      Service Provider
+    </TabsTrigger>
+  </TabsList> */}
+
+  {/* <TabsList
+  variant="line"
+  className="
+    w-full
+    flex
+    flex-row
+    justify-start
+    gap-2
+    sm:gap-4
+    md:gap-6
+    border-b
+    border-gray-200
+    bg-transparent
+    mb-6
+    overflow-x-auto
+    whitespace-nowrap
+    scrollbar-hide
+  "
+> */}
+<TabsList
+  variant="line"
+  className="
+    w-full
+    flex
+    flex-row
+    justify-between
+    items-center
+    border-b
+    border-gray-200
+    bg-transparent
+    mb-6
+  "
+>
+
+
+  <TabsTrigger value="company"className=" flex-1 px-0.5 sm:px-2 md:px-4 py-3 text-[10px] xs:text-[11px] sm:text-xs md:text-sm font-medium text-center  whitespace-nowrap
+    tracking-tight">
+       Company
+  </TabsTrigger>
+
+  <TabsTrigger value="freelancer" className=" flex-1 px-0.5 sm:px-2 md:px-4 py-3 text-[10px] xs:text-[11px] sm:text-xs md:text-sm font-medium text-center  whitespace-nowrap
+    tracking-tight">
+        Freelancer
+  </TabsTrigger>
+
+  <TabsTrigger value="service" className="flex-1 px-0.5 sm:px-2 md:px-4 py-3 text-[10px] xs:text-[11px] sm:text-xs md:text-sm font-medium text-center  whitespace-nowrap
+    tracking-tight">
+      Service Provider
+  </TabsTrigger>
+
+
+  {/* <TabsTrigger value="company" className="flex-shrink-0 px-4 py-3">
+    Company 
+  </TabsTrigger>
+
+  <TabsTrigger value="freelancer" className="flex-shrink-0 px-4 py-3">
+    Freelancer 
+  </TabsTrigger>
+
+  <TabsTrigger value="service" className="flex-shrink-0 px-4 py-3">
+    Service Provider
+  </TabsTrigger> */}
+</TabsList>
+
+  <TabsContent value="company">
+    <CompanySignUp />
+  </TabsContent>
+
+  <TabsContent value="freelancer">
+    <FreelancerSignUp />
+  </TabsContent>
+
+  <TabsContent value="service">
+    <ServiceProvider />
+  </TabsContent>
+</Tabs>
     </div>
   );
  }

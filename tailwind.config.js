@@ -4,6 +4,9 @@ export default {
   content: ['./index.html', './app/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+       screens: {
+        laptop: "1200px",
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
