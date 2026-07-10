@@ -1,8 +1,9 @@
-import React from 'react'
-
+import AccountPage from "../Tabs/serviceProviderPages/accountTypePage"
 const serviceProvider = () => {
   return (
-    <div>serviceProvider</div>
+    <div>
+      <AccountPage />
+    </div>
   )
 }
 
