@@ -18,19 +18,19 @@ export function AuthPage({ onAuthSuccess }: AuthPageProps) {
     <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] min-h-screen  w-full bg-gray-50/50">
       {/* <div className="grid grid-cols-1 xl:grid-cols-[3fr_2fr] min-h-screen w-full bg-gray-50/50"> */}
       {/* Left Column: Handles Form Alignment & Scrolling */}
-      <div className="w-full flex flex-col items-center justify-start px-6 py-12 md:py-16 min-h-screen">
+      <div className="w-full flex flex-col items-center justify-start px-4 py-12 md:py-16 min-h-screen">
         
         {/* Universal Logo Header */}
-        <div className="mb-8 text-center shrink-0 w-full max-w-xl">
-          <img
-            src="/BridgeTalentLogo.png"
-            alt="BridgeTalent Logo"
-            className="mx-auto h-16 object-contain"
-          />
-        </div>
+        <div className="mb-8 w-full max-w-xl shrink-0 text-center">
+  <img
+    src="/BridgeTalentLogo.png"
+    alt="BridgeTalent Logo"
+    className="mx-auto w-56 sm:w-64 md:w-72 lg:w-80 h-auto object-contain"
+  />
+</div>
 
         {/* Form Container: Forces all child forms to align to the same width */}
-        <div className="w-full max-w-xl flex flex-col items-center justify-center flex-1">
+        <div className="w-full max-w-xl flex flex-col items-center justify-center flex-1" >
           {isLogin && <LoginForm onSuccess={() => onAuthSuccess?.()} />}
           {isRegister && <RegisterForm onSuccess={() => onAuthSuccess?.()} />}
           {isForgotPassword && <ForgotPassword />}
