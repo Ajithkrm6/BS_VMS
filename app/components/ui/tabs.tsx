@@ -83,7 +83,7 @@ function TabsTrigger({ className, ...props }: TabsPrimitive.Tab.Props) {
       // )}
 
       className={cn(
-  "relative inline-flex items-center justify-center px-4 py-3 text-sm font-medium",
+  "relative inline-flex items-center justify-center px-4 py-3  font-medium",
   "border-b-2 border-transparent",
   "text-muted-foreground transition-colors duration-200",
   "hover:text-foreground",
