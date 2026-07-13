@@ -14,7 +14,13 @@ import {
   selectIsAutomaticTheme,
   selectIsCurrentThemeDark,
 } from '~/stores/themeSlice';
-import { getAllThemes, getDarkThemes, getLightThemes } from '~/utils/themeConfig';
+import {
+  getAllThemes,
+  getDarkThemes,
+  getLightThemes,
+  getComponentTheme,
+  type ComponentThemeColors,
+} from '~/utils/themeConfig';
 
 /**
  * useTheme - Complete theme management hook
@@ -84,4 +90,19 @@ export function useThemeToggle() {
     toggle: () => dispatch(toggleTheme()),
     isDark: useAppSelector(selectIsCurrentThemeDark),
   };
+}
+
+/**
+ * useComponentTheme - Get component-specific Tailwind classes
+ *
+ * @example
+ * const componentTheme = useComponentTheme();
+ *
+ * <button className={`${componentTheme.buttonPrimary} ${componentTheme.buttonPrimaryText} ${componentTheme.buttonPrimaryHover} px-6 py-2 rounded`}>
+ *   Click me
+ * </button>
+ */
+export function useComponentTheme(): ComponentThemeColors {
+  const isDark = useAppSelector(selectIsCurrentThemeDark);
+  return getComponentTheme(isDark);
 }

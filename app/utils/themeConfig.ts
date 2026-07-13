@@ -270,3 +270,173 @@ export function getDarkThemes(): ThemeVariant[] {
 export function getLightThemes(): ThemeVariant[] {
   return Object.values(THEME_VARIANTS).filter((theme) => !theme.isDark);
 }
+
+/**
+ * Component Theme System
+ * Provides semantic color names for components
+ * These map directly to Tailwind classes using the CSS variables
+ */
+export interface ComponentThemeColors {
+  // Button styles
+  buttonPrimary: string;
+  buttonPrimaryText: string;
+  buttonPrimaryHover: string;
+
+  buttonSecondary: string;
+  buttonSecondaryText: string;
+  buttonSecondaryHover: string;
+
+  buttonOutline: string;
+  buttonOutlineText: string;
+  buttonOutlineHover: string;
+
+  buttonGhost: string;
+  buttonGhostText: string;
+  buttonGhostHover: string;
+
+  // Text styles
+  textPrimary: string;
+  textSecondary: string;
+  textMuted: string;
+  textInverse: string;
+
+  // Background styles
+  bgPrimary: string;
+  bgSecondary: string;
+  bgMuted: string;
+  bgHover: string;
+
+  // Borders
+  borderDefault: string;
+  borderFocus: string;
+
+  // Cards
+  cardBg: string;
+  cardText: string;
+  cardBorder: string;
+
+  // Status colors
+  success: string;
+  warning: string;
+  error: string;
+  info: string;
+}
+
+/**
+ * Get component theme colors for light theme
+ */
+const getLightComponentTheme = (): ComponentThemeColors => ({
+  // Button Primary (Blue)
+  buttonPrimary: 'bg-primary',
+  buttonPrimaryText: 'text-primary-foreground',
+  buttonPrimaryHover: 'hover:bg-primary/90',
+
+  // Button Secondary
+  buttonSecondary: 'bg-secondary',
+  buttonSecondaryText: 'text-secondary-foreground',
+  buttonSecondaryHover: 'hover:bg-secondary/90',
+
+  // Button Outline
+  buttonOutline: 'border border-border bg-transparent',
+  buttonOutlineText: 'text-foreground',
+  buttonOutlineHover: 'hover:bg-accent hover:text-accent-foreground',
+
+  // Button Ghost
+  buttonGhost: 'bg-transparent',
+  buttonGhostText: 'text-foreground',
+  buttonGhostHover: 'hover:bg-muted',
+
+  // Text
+  textPrimary: 'text-foreground',
+  textSecondary: 'text-muted-foreground',
+  textMuted: 'text-muted-foreground',
+  textInverse: 'text-primary-foreground',
+
+  // Background
+  bgPrimary: 'bg-background',
+  bgSecondary: 'bg-card',
+  bgMuted: 'bg-muted',
+  bgHover: 'hover:bg-accent/10',
+
+  // Borders
+  borderDefault: 'border-border',
+  borderFocus: 'focus:border-primary',
+
+  // Cards
+  cardBg: 'bg-card',
+  cardText: 'text-card-foreground',
+  cardBorder: 'border-border',
+
+  // Status colors (added to tailwind separately)
+  success: 'text-green-600',
+  warning: 'text-yellow-600',
+  error: 'text-red-600',
+  info: 'text-blue-600',
+});
+
+/**
+ * Get component theme colors for dark theme
+ */
+const getDarkComponentTheme = (): ComponentThemeColors => ({
+  // Button Primary
+  buttonPrimary: 'bg-primary',
+  buttonPrimaryText: 'text-primary-foreground',
+  buttonPrimaryHover: 'hover:bg-primary/80',
+
+  // Button Secondary
+  buttonSecondary: 'bg-secondary',
+  buttonSecondaryText: 'text-secondary-foreground',
+  buttonSecondaryHover: 'hover:bg-secondary/80',
+
+  // Button Outline
+  buttonOutline: 'border border-border bg-transparent',
+  buttonOutlineText: 'text-foreground',
+  buttonOutlineHover: 'hover:bg-accent/20 hover:text-accent-foreground',
+
+  // Button Ghost
+  buttonGhost: 'bg-transparent',
+  buttonGhostText: 'text-foreground',
+  buttonGhostHover: 'hover:bg-muted/50',
+
+  // Text
+  textPrimary: 'text-foreground',
+  textSecondary: 'text-muted-foreground',
+  textMuted: 'text-muted-foreground',
+  textInverse: 'text-background',
+
+  // Background
+  bgPrimary: 'bg-background',
+  bgSecondary: 'bg-card',
+  bgMuted: 'bg-muted',
+  bgHover: 'hover:bg-accent/20',
+
+  // Borders
+  borderDefault: 'border-border',
+  borderFocus: 'focus:border-primary',
+
+  // Cards
+  cardBg: 'bg-card',
+  cardText: 'text-card-foreground',
+  cardBorder: 'border-border',
+
+  // Status colors
+  success: 'text-green-400',
+  warning: 'text-yellow-400',
+  error: 'text-red-400',
+  info: 'text-blue-400',
+});
+
+/**
+ * Get component theme colors based on current theme
+ */
+export function getComponentTheme(isDark: boolean): ComponentThemeColors {
+  return isDark ? getDarkComponentTheme() : getLightComponentTheme();
+}
+
+/**
+ * Component Style Builder
+ * Combines multiple component theme colors into a single className
+ */
+export function buildComponentClass(...classes: (string | undefined | false)[]): string {
+  return classes.filter(Boolean).join(' ');
+}
