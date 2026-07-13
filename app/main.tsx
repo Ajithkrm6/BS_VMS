@@ -17,13 +17,14 @@ import { queryClient } from '~/services/queryClient';
 
 // Components
 import { ErrorBoundary } from '~/components/Layout/Utility/ErrorBoundary';
+import { ThemeProvider } from '~/components/Theme/ThemeProvider';
 
 // Module configs
 import { landingModuleConfig } from '~/modules/landing/module.config';
 import authModuleConfig from '~/modules/auth/module.config';
 import coreModuleConfig from '~/modules/core/module.config';
 import opportunitiesModuleConfig from '~/modules/opportunities/module.config';
-import vehiclesModuleConfig from '~/modules/vehicles/module.config';
+import recruitingModuleConfig from '~/modules/recruiting/module.config';
 import maintenanceModuleConfig from '~/modules/maintenance/module.config';
 import reportingModuleConfig from '~/modules/reporting/module.config';
 import notificationsModuleConfig from '~/modules/notifications/module.config';
@@ -54,7 +55,7 @@ function AppInitializer({ children }: { children: React.ReactNode }) {
             authModuleConfig, // Auth pages (login, register)
             coreModuleConfig, // Dashboard
             opportunitiesModuleConfig, // Protected feature
-            vehiclesModuleConfig, // Protected feature
+            recruitingModuleConfig, // Protected feature - Recruiting & Talent Management
             maintenanceModuleConfig, // Protected feature
             reportingModuleConfig, // Protected feature
             notificationsModuleConfig, // Protected feature
@@ -238,11 +239,13 @@ function AppContent() {
 
   return (
     <ReduxProvider store={store}>
-      <QueryClientProvider client={queryClient}>
-        <ModuleProvider>
-          <App />
-        </ModuleProvider>
-      </QueryClientProvider>
+      <ThemeProvider>
+        <QueryClientProvider client={queryClient}>
+          <ModuleProvider>
+            <App />
+          </ModuleProvider>
+        </QueryClientProvider>
+      </ThemeProvider>
     </ReduxProvider>
   );
 }

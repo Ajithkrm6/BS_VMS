@@ -1,8 +1,8 @@
-# Copilot Instructions for BS-VMS Project
+# Copilot Instructions for Bridge Talent Project
 
 ## Project Overview
 
-BS-VMS (Vehicle Management System) is a modern web application built with React, Vite, Redux, TailwindCSS, and TanStack Query.
+Bridge Talent is a modern web application built with React, Vite, Redux, TailwindCSS, and TanStack Query for recruiting and vendor management.
 
 ## Technology Stack
 

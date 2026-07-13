@@ -139,11 +139,11 @@ export const FEATURE_FLAGS: FeatureFlags = {
     targetEnvironments: ['development', 'staging', 'production'],
   },
 
-  // Vehicle Management
-  vehicleManagement: {
-    name: 'vehicleManagement',
+  // Recruiting Management
+  recruitingManagement: {
+    name: 'recruitingManagement',
     enabled: true,
-    description: 'Vehicle management and tracking',
+    description: 'Recruiting and vendor management capabilities',
     targetEnvironments: ['development', 'staging', 'production'],
   },
 

@@ -38,23 +38,24 @@ export function Example1_UseFeatureHook() {
  * Example 2: useFeatureConfig hook
  */
 export function Example2_UseFeatureConfig() {
-  const vehicleConfig = useFeatureConfig('vehicleManagement');
+  const recruitingConfig = useFeatureConfig('recruitingManagement');
 
   return (
     <div>
-      <h2>Vehicle Management Config</h2>
-      {vehicleConfig ? (
+      <h2>Recruiting Management Config</h2>
+      {recruitingConfig ? (
         <div className="p-4 bg-gray-50 border border-gray-300 rounded">
           <p>
-            <strong>Max vehicles per page:</strong> {String(vehicleConfig.maxVehiclesPerPage || 50)}
+            <strong>Max postings per page:</strong>{' '}
+            {String(recruitingConfig.maxPostingsPerPage || 50)}
           </p>
           <p>
-            <strong>Bulk operations:</strong>{' '}
-            {vehicleConfig.enableBulkOperations ? 'Enabled' : 'Disabled'}
+            <strong>Talent pool enabled:</strong>{' '}
+            {recruitingConfig.enableTalentPool ? 'Enabled' : 'Disabled'}
           </p>
         </div>
       ) : (
-        <p className="text-gray-500">Vehicle management is disabled</p>
+        <p className="text-gray-500">Recruiting management is disabled</p>
       )}
     </div>
   );
@@ -85,16 +86,19 @@ export function Example3_EnabledFeatures() {
  */
 export function Example4_UseFeatureRender() {
   const navigationItems = useFeatureRender(
-    'vehicleManagement',
+    'recruitingManagement',
     <>
       <li>
-        <a href="/vehicles">Vehicles</a>
+        <a href="/recruiting">Jobs & Postings</a>
       </li>
       <li>
-        <a href="/vehicles/add">Add Vehicle</a>
+        <a href="/recruiting/talent">Talent Pool</a>
+      </li>
+      <li>
+        <a href="/recruiting/bench">Bench Resources</a>
       </li>
     </>,
-    <li className="text-gray-400">Vehicles (Coming Soon)</li>
+    <li className="text-gray-400">Recruiting (Coming Soon)</li>
   );
 
   return (

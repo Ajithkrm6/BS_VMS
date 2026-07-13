@@ -8,6 +8,8 @@
 import { configureStore, Reducer } from '@reduxjs/toolkit';
 import { useDispatch, useSelector, TypedUseSelectorHook } from 'react-redux';
 import authReducer from '~/stores/authSlice';
+import themeReducer from '~/stores/themeSlice';
+import exampleFlowReducer from '~/stores/exampleFlowSlice';
 import { moduleRegistry } from '../utils/moduleRegistry';
 
 /**
@@ -20,6 +22,8 @@ export function createAppStore(additionalReducers: Record<string, Reducer<any>> 
   // Merge all reducers
   const allReducers = {
     auth: authReducer,
+    theme: themeReducer,
+    exampleFlow: exampleFlowReducer,
     ...moduleReducers,
     ...additionalReducers,
   };

@@ -10,17 +10,17 @@ export const vehiclesModuleConfig: ModuleConfig = {
   name: 'Vehicles',
   description: 'Vehicle management and tracking',
   version: '1.0.0',
-  featureFlag: 'vehicleManagement',
+  featureFlag: 'recruitingManagement',
   order: 1,
   category: 'business',
   dependencies: ['auth', 'core'],
   routes: [],
   permissions: [
     {
-      resource: 'vehicles',
+      resource: 'recruiting',
       actions: ['read', 'create', 'update', 'delete'],
     },
   ],
 };
 
-export default vehiclesModuleConfig;
+export default recruitingModuleConfig;

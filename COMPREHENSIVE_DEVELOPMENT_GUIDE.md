@@ -1,4 +1,4 @@
-# BS-VMS Complete Development Guide
+# Bridge Talent Complete Development Guide
 
 ## Production-Level Modular Architecture with Module System
 

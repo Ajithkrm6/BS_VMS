@@ -11,7 +11,7 @@ export function Layout({ children }: RootLayoutProps) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>BS-VMS - Vendor Management System</title>
+        <title>Bridge Talent - Recruiting & Vendor Management</title>
       </head>
       <body>
         <LayoutPrimary>{children}</LayoutPrimary>

@@ -205,13 +205,7 @@ export default function CompanySignUp() {
     bg-white
     shadow-sm
     p-4 sm:p-6 md:p-8
-    w-full
-    md:w-[100%]
   
-    lg:w-[100%]
-    lg:-ml-[.5%]
-    xl:w-[130%]
-    xl:-ml-[12.5%]
   
   "
 

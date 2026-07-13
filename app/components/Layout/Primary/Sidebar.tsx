@@ -22,7 +22,10 @@ export function Sidebar({
     >
       <nav className="p-4">
         <div className="flex items-center justify-between mb-8">
-          <h1 className={`font-bold text-xl ${isOpen || isMobile ? 'block' : 'hidden'}`}>VMS</h1>
+          <h1 className={`font-bold text-xl ${isOpen || isMobile ? 'block' : 'hidden'}`}>
+            Bridge Talent
+          </h1>
+          <h1 className={`font-bold text-lg ${!isOpen && !isMobile ? 'block' : 'hidden'}`}>BT</h1>
           {showToggleButton && (
             <button onClick={onToggle} className="p-2 hover:bg-muted rounded hidden md:block">
               ☰

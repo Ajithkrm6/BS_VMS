@@ -1,6 +1,6 @@
-# 📖 BS-VMS - Vendor Management System (v2.0 - Modular Architecture)
+# 📖 Bridge Talent - Recruiting & Vendor Management (v2.0 - Modular Architecture)
 
-A modern, production-ready React application for managing vendors, jobs, and opportunities.
+A modern, production-ready React application for recruiting, vendor management, and opportunity tracking.
 
 **Status:** ✅ Production Grade | **Architecture:** 10/10 | **TypeScript:** 0 Errors | **Build:** Success
 
@@ -162,7 +162,7 @@ app/
 
 ```bash
 git clone <repo-url>
-cd BS-VMS
+cd bridge-talent
 npm install
 ```
 

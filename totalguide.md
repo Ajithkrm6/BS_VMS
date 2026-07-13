@@ -1,4 +1,4 @@
-# 📖 BS-VMS - Complete Developer Guide
+# 📖 Bridge Talent - Complete Developer Guide
 
 **Unified Documentation | Production-Ready | Scale to Millions**
 
@@ -27,9 +27,9 @@
 
 # 1️⃣ Quick Overview
 
-## What is BS-VMS?
+## What is Bridge Talent?
 
-**BS-VMS** (Vendor Management System) is a modern, production-ready web application for managing vendors, jobs, and opportunities.
+**Bridge Talent** is a modern, production-ready web application for recruiting, vendor management, and opportunity tracking.
 
 **Key Features:**
 
@@ -92,7 +92,7 @@
 ## Directory Layout
 
 ```
-BS-VMS/
+Bridge Talent/
 ├── app/
 │   ├── components/
 │   │   ├── Auth/
@@ -148,7 +148,7 @@ BS-VMS/
 ```bash
 # Clone the project
 git clone <repo-url>
-cd BS-VMS
+cd Bridge Talent
 
 # Install dependencies
 npm install
@@ -1008,7 +1008,7 @@ Solution: Check React DevTools Profiler
 
 ## Summary
 
-This is your **complete guide to BS-VMS**.
+This is your **complete guide to Bridge Talent**.
 
 **For New Developers:** Read sections 1-5, then sections 6-7, then explore code starting at `app/main.tsx`
 

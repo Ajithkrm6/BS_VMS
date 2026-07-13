@@ -9,7 +9,7 @@ export function HomePage() {
       {/* Header */}
       <nav className="bg-white shadow-sm">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-blue-600">BS-VMS</h1>
+          <h1 className="text-2xl font-bold text-blue-600">Bridge Talent</h1>
           <div className="space-x-4">
             <a href="/login" className="text-gray-600 hover:text-gray-900">
               Login
@@ -65,7 +65,7 @@ export function HomePage() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <p>&copy; 2024 BS-VMS. All rights reserved.</p>
+          <p>&copy; 2024 Bridge Talent - Recruiting & Vendor Management. All rights reserved.</p>
           <div className="mt-4 space-x-6">
             <a href="/privacy" className="hover:underline">
               Privacy
