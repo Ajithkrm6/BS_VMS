@@ -1,4 +1,4 @@
-# BS-VMS Architecture Guide - Production Grade
+# Bridge Talent Architecture Guide - Production Grade
 
 ## 🏗️ Overview
 

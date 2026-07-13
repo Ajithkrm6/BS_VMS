@@ -2,7 +2,7 @@
 
 ## Overview
 
-The BS-VMS application now has a **unified, centralized theming system** that controls all colors and styling across the entire application from a **single location**.
+The Bridge Talent application now has a **unified, centralized theming system** that controls all colors and styling across the entire application from a **single location**.
 
 ---
 

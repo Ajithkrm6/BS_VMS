@@ -9,7 +9,7 @@ interface TopNavigationProps {
   onMenuToggle?: () => void;
 }
 
-export function TopNavigation({ title = 'BS-VMS', onMenuToggle }: TopNavigationProps) {
+export function TopNavigation({ title = 'Bridge Talent', onMenuToggle }: TopNavigationProps) {
   const { user, logout } = useAuth();
   const [showUserMenu, setShowUserMenu] = useState(false);
 

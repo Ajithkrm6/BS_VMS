@@ -1,14 +1,14 @@
 /**
- * Vehicles Module Configuration
- * Vehicle management feature
+ * Recruiting Module Configuration
+ * Recruiting and vendor management feature
  */
 
 import type { ModuleConfig } from '~/core/utils/moduleRegistry';
 
-export const vehiclesModuleConfig: ModuleConfig = {
-  id: 'vehicles',
-  name: 'Vehicles',
-  description: 'Vehicle management and tracking',
+export const recruitingModuleConfig: ModuleConfig = {
+  id: 'recruiting',
+  name: 'Recruiting',
+  description: 'Recruiting and vendor management',
   version: '1.0.0',
   featureFlag: 'recruitingManagement',
   order: 1,

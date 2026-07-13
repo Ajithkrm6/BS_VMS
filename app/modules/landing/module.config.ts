@@ -39,6 +39,15 @@ export const landingModuleConfig: ModuleConfig = {
       isPublic: true, // ← Anyone can see this
       order: 1,
     },
+    {
+      path: '/example-wizard',
+      name: 'Example Wizard',
+      component: lazy(() =>
+        import('~/modules/landing/pages/ExampleWizardPage').then((m) => ({ default: m.default }))
+      ),
+      isPublic: true, // ← Anyone can see this
+      order: 2,
+    },
     // {
     //   path: '/privacy',
     //   name: 'Privacy',

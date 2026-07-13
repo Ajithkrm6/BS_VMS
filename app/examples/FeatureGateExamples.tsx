@@ -35,13 +35,11 @@ export function Example2_MultiFeatureGate() {
       <h2>Export to Excel</h2>
 
       <MultiFeatureGate
-        features={['vehicleManagement', 'exportFeature']}
+        features={['recruitingManagement', 'exportFeature']}
         logic="AND"
-        fallback={<p>Export feature requires vehicle management</p>}
+        fallback={<p>Export feature requires recruiting management</p>}
       >
-        <button className="px-4 py-2 bg-green-600 text-white rounded">
-          Export to Excel
-        </button>
+        <button className="px-4 py-2 bg-green-600 text-white rounded">Export to Excel</button>
       </MultiFeatureGate>
     </div>
   );
@@ -54,7 +52,7 @@ export function Example3_FeatureBadges() {
   return (
     <div className="space-y-2">
       <h2>Feature Status</h2>
-      <FeatureBadge feature="vehicleManagement" />
+      <FeatureBadge feature="recruitingManagement" />
       <FeatureBadge feature="advancedReporting" />
       <FeatureBadge feature="realTimeUpdates" />
     </div>
@@ -69,10 +67,10 @@ export function Example4_ConditionalUI() {
     <div className="p-4 border rounded">
       <h2>Dashboard</h2>
 
-      <FeatureGate feature="vehicleManagement">
+      <FeatureGate feature="recruitingManagement">
         <section className="mt-4">
-          <h3 className="font-semibold">Vehicles</h3>
-          <p>Manage your fleet vehicles...</p>
+          <h3 className="font-semibold">Recruiting</h3>
+          <p>Manage job postings, talent pool, and bench resources...</p>
         </section>
       </FeatureGate>
 
@@ -102,9 +100,7 @@ export function Example5_DarkModeToggle() {
       feature="darkMode"
       fallback={<p className="text-sm text-gray-500">Dark mode is not available</p>}
     >
-      <button className="px-4 py-2 bg-gray-800 text-white rounded">
-        🌙 Toggle Dark Mode
-      </button>
+      <button className="px-4 py-2 bg-gray-800 text-white rounded">🌙 Toggle Dark Mode</button>
     </FeatureGate>
   );
 }

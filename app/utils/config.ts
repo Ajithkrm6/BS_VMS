@@ -7,7 +7,7 @@ export const API_CONFIG = {
 // Feature flags
 export const FEATURES = {
   enableDebug: import.meta.env.VITE_ENABLE_DEBUG === 'true',
-  appName: import.meta.env.VITE_APP_NAME || 'BS-VMS',
+  appName: import.meta.env.VITE_APP_NAME || 'Bridge Talent',
 };
 
 // Environment

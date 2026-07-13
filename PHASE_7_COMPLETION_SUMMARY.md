@@ -388,7 +388,7 @@ routes: [{ path: '/help', component: Help, isPublic: true }];
 
 🎉 **Phase 7 Complete!**
 
-The BS-VMS project now has:
+The Bridge Talent project now has:
 
 - ✅ Production-grade modular architecture
 - ✅ Simplified routing with zero boilerplate

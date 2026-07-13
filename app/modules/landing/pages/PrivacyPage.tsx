@@ -21,8 +21,8 @@ export function PrivacyPage() {
           <section>
             <h2 className="text-2xl font-bold mb-3">1. Introduction</h2>
             <p>
-              BS-VMS ("we", "our", or "us") values your privacy. This Privacy Policy explains how we
-              collect, use, disclose, and safeguard your information.
+              Bridge Talent ("we", "our", or "us") values your privacy. This Privacy Policy explains
+              how we collect, use, disclose, and safeguard your information.
             </p>
           </section>
 
@@ -32,7 +32,7 @@ export function PrivacyPage() {
             <ul className="list-disc ml-6 mt-2">
               <li>Account information (name, email, password)</li>
               <li>Profile information (company, role, preferences)</li>
-              <li>Content you create (vehicles, opportunities, notes)</li>
+              <li>Content you create (job postings, talent profiles, bench resources, notes)</li>
             </ul>
           </section>
 
@@ -59,7 +59,7 @@ export function PrivacyPage() {
             <h2 className="text-2xl font-bold mb-3">5. Contact Us</h2>
             <p>
               If you have questions about this Privacy Policy, please contact us at
-              privacy@bs-vms.com
+              privacy@bridgetalent.com
             </p>
           </section>
         </div>

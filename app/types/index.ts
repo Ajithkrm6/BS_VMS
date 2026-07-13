@@ -5,15 +5,27 @@ export interface ApiResponse<T> {
   message: string;
 }
 
-// Vehicle types
-export interface Vehicle {
+// Talent & Vendor types
+export interface TalentProfile {
   id: string;
-  make: string;
-  model: string;
-  year: number;
-  vin: string;
-  licensePlate: string;
-  status: 'active' | 'inactive' | 'maintenance';
+  name: string;
+  email: string;
+  phone: string;
+  skills: string[];
+  experience: number;
+  location: string;
+  status: 'available' | 'bench' | 'assigned' | 'inactive';
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface Vendor {
+  id: string;
+  name: string;
+  email: string;
+  specialization: string[];
+  capacity: number;
+  status: 'active' | 'inactive';
   createdAt: string;
   updatedAt: string;
 }
@@ -27,13 +39,15 @@ export interface User {
   createdAt: string;
 }
 
-// Maintenance types
-export interface MaintenanceRecord {
+// Job Posting types
+export interface JobPosting {
   id: string;
-  vehicleId: string;
-  type: string;
+  title: string;
   description: string;
-  cost: number;
-  completedAt: string;
+  requiredSkills: string[];
+  talentId?: string;
+  vendorId?: string;
+  status: 'open' | 'filled' | 'closed';
   createdAt: string;
+  updatedAt: string;
 }
