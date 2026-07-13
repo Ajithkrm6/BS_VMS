@@ -17,6 +17,7 @@ import { queryClient } from '~/services/queryClient';
 
 // Components
 import { ErrorBoundary } from '~/components/Layout/Utility/ErrorBoundary';
+import { ThemeProvider } from '~/components/Theme/ThemeProvider';
 
 // Module configs
 import { landingModuleConfig } from '~/modules/landing/module.config';
@@ -238,11 +239,13 @@ function AppContent() {
 
   return (
     <ReduxProvider store={store}>
-      <QueryClientProvider client={queryClient}>
-        <ModuleProvider>
-          <App />
-        </ModuleProvider>
-      </QueryClientProvider>
+      <ThemeProvider>
+        <QueryClientProvider client={queryClient}>
+          <ModuleProvider>
+            <App />
+          </ModuleProvider>
+        </QueryClientProvider>
+      </ThemeProvider>
     </ReduxProvider>
   );
 }
