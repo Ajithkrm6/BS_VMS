@@ -18,7 +18,7 @@ export function AuthPage({ onAuthSuccess }: AuthPageProps) {
     <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] min-h-screen  w-full bg-gray-50/50">
       {/* <div className="grid grid-cols-1 xl:grid-cols-[3fr_2fr] min-h-screen w-full bg-gray-50/50"> */}
       {/* Left Column: Handles Form Alignment & Scrolling */}
-      <div className="w-full flex flex-col items-center justify-start px-4 py-12 md:py-16 min-h-screen">
+      <div className="w-full flex flex-col items-center justify-start px-4 py-12 md:py-16 min-h-screen " style={{marginTop: "-25px"}}>
         
         {/* Universal Logo Header */}
         <div className="mb-8 w-full max-w-xl shrink-0 text-center">
@@ -44,7 +44,7 @@ export function AuthPage({ onAuthSuccess }: AuthPageProps) {
         <img
           src="/auth-illustration.png"
           alt="Authentication illustration"
-          className="w-full h-full object-cover rounded-2xl shadow-sm"
+          className="w-82 h-full object-cover rounded-2xl shadow-sm mt-1"
         />
       </div>
 
